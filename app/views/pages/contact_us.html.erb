@@ -1,0 +1,66 @@
+<div class="container">
+    <br><br>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        <h1>How Can We Help?</h1>
+        <p>Need to get in touch with us? Please, fill the form with your inquiry and we will reach out to you as soon as possible.</p>
+       <br><br>
+       <%= image_tag("contactPic.JPG", style:"height: 37rem;") %>
+        </div>
+        <div class="col-sm">
+            <div class="Title">
+                <h1>Contact Us</h1>
+            </div>
+
+            <div>
+                <div>
+                    <form>
+                        <br>
+                        <div class="form-group">
+                            <label for="formControlInput1">Email address</label>
+                            <input type="email" class="form-control" id="formControlInput1" placeholder=" example@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="formControlInput2">Name</label>
+                            <input type="name" class="form-control" id="formControlInput1" placeholder="Stephen Edwards">
+                        </div>
+                        <div class="form-group">
+                            <label for="formControlSelect1">Country</label>
+                                <select class="form-control" id="formControlSelect1">
+                                    <option>Ireland</option>
+                                    <option>France</option>
+                                    <option>Spain</option>
+                                    <option>Portugal</option>
+                                    <option>Germany</option>
+                                    <option>Hungry</option>
+                                    <option>Italy</option>
+                                </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="formControlTextarea1">Your Message</label>
+                            <textarea class="form-control" id="formControlTextarea1" rows="8"></textarea>
+                        </div>
+                    </form>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Terms & conditions
+                    </label>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success mb-2">Submit</button>
+
+
+                <form>
+                    <div class="form-group">
+                        <label for="formControlFile1">File input</label>
+                        <input type="file" class="form-control-file" id="formControlFile1">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

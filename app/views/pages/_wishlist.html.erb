@@ -1,0 +1,18 @@
+<% if wishlist&.book.present? %>
+  <div class="card" style="width: 12rem;">
+    <%= image_tag(wishlist.book.cover, class: "img-responsive") %>
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= wishlist.book.title %>
+      </h5>
+      <div style="padding-right: 10px">
+        <%= button_to "Remove",
+              remove_from_wishlist_url(wishlist_id: wishlist.id),
+              method: :post,
+              data: {turbo_confirm: "Are you sure?"},
+              class: "btn btn-primary"
+              %>
+      </div>
+    </div>
+  </div>
+<% end %>

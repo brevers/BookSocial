@@ -1,0 +1,28 @@
+<div style="min-height: 400px;">
+  <% if flash[:alert] %>
+    <div style="color: red">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+  <% if @results.any? %>
+    <div>
+        <% @results.each_slice(3) do |result1, result2, result3| %>
+          <div class="row">
+            <div class="col-md-4">
+              <%= render "import_book", result: result1 if result1.present? %>
+            </div>
+            <div class="col-md-4">
+              <%= render "import_book", result: result2 if result2.present? %>
+            </div>
+            <div class="col-md-4">
+              <%= render"import_book", result: result3 if result3.present? %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  <% else %>
+    <div>
+      <h2>Sorry we couldn't find "<%= @title.titleize %>"</h2>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<% if fav&.book.present? %>
+  <div class="card" style="width: 12rem;">
+    <%= image_tag(fav.book.cover, class: "img-responsive") %>
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= fav.book.title %>
+      </h5>
+      <div style="padding-right: 10px">
+        <%= button_to "Remove",
+              remove_from_favorites_url(favorite_id: fav.id),
+              method: :post,
+              data: {turbo_confirm: "Are you sure?"},
+              class: "btn btn-primary"
+              %>
+      </div>
+    </div>
+  </div>
+<% end %>

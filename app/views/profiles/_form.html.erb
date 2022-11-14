@@ -1,0 +1,50 @@
+<div class="jumbotron jumbotron-fluid" style="width: 700px;">
+   <div class="container">
+    <%= form_with(model: profile) do |form| %>
+      <% if profile.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+          <ul>
+            <% profile.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= form.label :name, style: "display: block" %>
+        <%= form.text_field :name,
+            value: profile.name,
+            class:"form-control", placeholder: "Name",
+            required: true %>
+        <br>
+      </div>
+
+      <div>
+        <%= form.label :username, style: "display: block" %>
+        <%= form.text_field :username,
+            value: profile.username,
+            class:"form-control",
+            placeholder: "First Name" %>
+        <br>
+      </div>
+
+      <div>
+        <%= form.label :lastname, style: "display: block" %>
+        <%= form.text_field :lastname,
+            value: profile.lastname,
+            class:"form-control",
+            placeholder: "Last Name" %>
+        <br>
+      </div>
+
+      <div>
+      <br>
+        <%= form.submit "Save", class:"btn btn-success md", style:"width: 200px;" %>
+        <%= link_to "Go to Main", main_path %>
+      </div>
+    <% end %>
+  </div>
+</div>

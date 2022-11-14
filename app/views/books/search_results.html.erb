@@ -1,0 +1,33 @@
+<div style="min-height: 400px;">
+  <% if @results.any? %>
+    <div>
+        <% @results.each_slice(3) do |book1, book2, book3| %>
+          <div class="row">
+            <div class="col-md-4">
+              <%= render book1 if book1.present? %>
+            </div>
+            <div class="col-md-4">
+              <%= render book2 if book2.present? %>
+            </div>
+            <div class="col-md-4">
+              <%= render book3 if book3.present? %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  <% else %>
+    <div>
+      <strong>
+        There are no books matching: <%= @title %>
+      </strong>
+      <hr>
+      <div>
+        Try searching this title using our <%=
+          link_to "Google Books Integration",
+          google_search_path(@title),
+          class: "btn primary btn-primary"
+        %>
+      </div>
+    </div>
+  <% end %>
+</div>

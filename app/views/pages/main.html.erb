@@ -1,0 +1,60 @@
+<!--Added from boostrap grey div-->
+<div class="jumbotron">
+  <!--MY Profile -->
+  <h1 class="display-4"> <%= current_user.profile.name %>`s Profile </h1>
+  <p class="lead"> STATUS-> to add status go to settings</p>
+
+  <hr>
+
+  <!--Book Wish List Section-->
+  <h2>READ</h2>
+    <% if current_user.profile.profile_read_books.count > 0 %>
+    <div class="d-flex align-content-start flex-wrap">
+      <% current_user.profile.profile_read_books.each_slice(3) do |f1, f2, f3| %>
+        <%= render "pages/read", read: f1 %>
+        <%= render "pages/read", read: f2 %>
+        <%= render "pages/read", read: f3 %>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <b>You haven't read anything yet</b>
+    </div>
+  <% end %>
+  <br/>
+
+  <!--Favorite Books Section-->
+  <h2>FAVORITES</h2>
+  <hr class="my-4">
+
+  <% if current_user.profile.profile_favorite_books.count > 0 %>
+    <div class="d-flex align-content-start flex-wrap">
+      <% current_user.profile.profile_favorite_books.each_slice(3) do |f1, f2, f3| %>
+        <%= render "pages/favorite", fav: f1 %>
+        <%= render "pages/favorite", fav: f2 %>
+        <%= render "pages/favorite", fav: f3 %>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <b>You have no favorites books yet</b>
+    </div>
+  <% end %>
+  <br/>
+
+  <!--Book Wish List Section-->
+  <h2>WISH LIST</h2>
+    <% if current_user.profile.profile_wishlisted_books.count > 0 %>
+    <div class="d-flex align-content-start flex-wrap">
+      <% current_user.profile.profile_wishlisted_books.each_slice(3) do |f1, f2, f3| %>
+        <%= render "pages/wishlist", wishlist: f1 %>
+        <%= render "pages/wishlist", wishlist: f2 %>
+        <%= render "pages/wishlist", wishlist: f3 %>
+      <% end %>
+    </div>
+  <% else %>
+    <div>
+      <b>You have nothing in your wishlist yet</b>
+    </div>
+  <% end %>
+  <br/>

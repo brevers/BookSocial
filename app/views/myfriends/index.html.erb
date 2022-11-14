@@ -1,0 +1,39 @@
+<p style="color: green"><%= notice %></p>
+<br/>
+<h1>Your Friends List</h1>
+<br/>
+<!--table from boostrap-->
+<div id="myfriends">
+  <table class="table table-striped table-dark table-bordered table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Handle</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th colspan= "6"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+    <!--loop for each friend add to the table-->
+    <%i=1%>
+    <% @myfriends.each do |myfriend|%>
+      <% if myfriend.user == current_user%>
+        <tr>
+            <td><%= myfriend.id %>
+            <td><%= myfriend.user_name %></td>
+            <td><%= myfriend.first_name %></td>
+            <td><%= myfriend.email %></td>
+            <td class="d-flex justify-content-center"><%= link_to "Go to profile", myfriend , class:"btn btn-light" %></td>
+          </td>
+        </tr>
+      <!--<% end %>-->
+    <% end %>
+    </tbody>
+  </table>
+
+</div>
+<br/>
+<%= link_to "Add New Friend", new_myfriend_path, ip: "btn btn-success", class:"btn btn-outline-dark" %>
+

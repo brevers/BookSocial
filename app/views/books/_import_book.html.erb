@@ -1,0 +1,18 @@
+<!-- Partial view to import a book -->
+<% if result.present? %>
+  <div class="card" style="width: 18rem;">
+    <%= image_tag(result.image || "book-not-found.jpg", class: "img-responsive") %>
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= result.title %>
+      </h5>
+
+      <div style="padding-right: 10px">
+        <%= button_to "+ Catalogue",
+            import_path(book: {cover: result.image, title: result.title}),
+            class: "btn btn-primary"
+        %>
+      </div>
+    </div>
+  </div>
+<% end %>

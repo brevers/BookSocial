@@ -1,0 +1,24 @@
+<!-- Partial view to show a book -->
+<!-- TODO: Tweak Styles -->
+<div class="container">
+<% if book.present? %>
+  <div class="card" style="width: 18rem;">
+    <%= image_tag(book.cover, class: "img-responsive") %>
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= book.title %>
+      </h5>
+    <div class="row" style="margin-top: 10px">
+      <div style="padding-right: 10px">
+        <%= button_to "+ Favorites", add_to_favorites_url(id: book.id), class: "btn btn-primary" %>
+      </div>
+      <div>
+        <%= button_to "+ Wishlist", add_to_wishlist_url(id: book.id), class: "btn btn-success" %>
+      </div>
+      <div>
+        <%= button_to "+ Read", add_to_reads_url(id: book.id), class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

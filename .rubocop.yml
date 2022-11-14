@@ -1,0 +1,84 @@
+require: rubocop-rails
+AllCops:
+  TargetRubyVersion: 3.1
+
+Layout/DotPosition:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 200
+  Exclude:
+    - ./test/fixtures/*.yml
+
+Metrics/MethodLength:
+  Max: 18
+
+Naming/AccessorMethodName:
+    Enabled: false
+
+Layout/ArgumentAlignment:
+  Exclude:
+    - ./app/controllers/carts_controller.rb
+
+Layout/HashAlignment:
+  Exclude:
+    - ./app/controllers/carts_controller.rb
+
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Enabled: false
+
+Lint/RequireParentheses:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - ./test/**/*
+
+Metrics/ClassLength:
+  Exclude:
+    - ./test/**/*
+    - ./app/models/store.rb
+    - ./app/models/product.rb
+    - ./app/controllers/products_controller.rb
+    - ./app/controllers/admin/products_controller.rb
+    - ./app/controllers/seller/products_controller.rb
+    - ./app/controllers/application_controller.rb
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
+
+Style/Encoding:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+Rails/Present:
+  Enabled: false
+
+Style/TrailingUnderscoreVariable:
+  Enabled: false

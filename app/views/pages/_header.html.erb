@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" >
+    <%= image_tag("bold.png", class: "img-responsive", style:"width: 3rem;") %>
+    <%= link_to "book_social", root_path, class:"navbar-brand" %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <!--If user is signed in-->
+      <% if user_signed_in? %>
+
+                <!--DELETE USER SESSION-->
+        <li class="nav-item"> <!--button_to-->
+        <div class="nav-link">
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:"btn btn-outline-light" %></div>
+        </li>
+
+        <!--Dropdown menu-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            Settings
+          </a>
+          <div class="dropdown-menu">
+            
+            <%= link_to "My Profile", main_path, class:"dropdown-item" %>
+            <!--MODIFY PROFILE USER -->
+            <%= link_to "Edit User", edit_user_registration_path, class:"dropdown-item" %>
+            <!--Contact us àge link-->
+            <div class="dropdown-divider"></div>
+            <%= link_to "Contact Us", contact_us_path, class:"dropdown-item" %>
+            <!--<a class="dropdown-item" href="#">Contact Us</a>-->
+          </div>
+        </li>
+        <!--Link to show myfriends page-->
+        <li class="nav-item">
+        <%= link_to "MY FRIENDS", myfriends_path, class:"nav-link" %>
+        </li>
+
+      <% else %>
+        <!--LOG IN with a previous registered user-->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+          <%= link_to "Log In", new_user_session_path , class:"btn btn-outline-light" %>
+          </li>
+        </ul>
+        <!--CREATE USER SESSION-->
+        <li class="nav-item">
+        <%= link_to "Sign Up",  new_user_registration_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link disabled">MY FRIENDS</a>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= form_for :search, url: "/search",
+        method: :get,
+        class: "form-inline my-2 my-lg-0" do |f| %>
+      <input class="form-control mr-sm-2" name="title" type="search" placeholder="Search by Title"aria-label="Search">
+      <button class="btn btn-outline-light my-2 my-sm-4" type="submit"> Search</button>
+    <% end %>
+  </div>
+</nav>

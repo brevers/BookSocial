@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<!--Added from boostrap grey div-->
+<div class="jumbotron">
+
+  <!--Profile from friend-->
+  <h1 class="display-4"> <%= @myfriend.first_name %>`s Profile </h1>
+  <p class="lead"> STATUS-> I love all kind of books. Every single author and book have a special place in my heart .</p>
+  
+  <h2>Bood Read</h2>
+  <hr class="my-4">
+  <p>ADD BOOK HERE.</p>
+  <br/>
+
+  <h2>Favorites</h2>
+  <hr class="my-4">
+  <p>ADD BOOK HERE.</p>
+  <br/>
+
+  <h2>Wish List</h2>
+  <hr class="my-4">
+  <p>ADD BOOK HERE.</p>
+  <br/><br/>
+
+
+  <!-- No need to edit friends-->
+  <!-- <div> <%= link_to "Edit this myfriend", edit_myfriend_path(@myfriend), class:"btn btn-outline-dark" %> 
+  </div> -->
+  <div>
+    <%= link_to "Back to myfriends", myfriends_path, class:"btn btn-outline-dark" %>
+  </div>
+
+</div>
+
+<!--Button to delete Friend-->
+<div class="d-flex justify-content-end">
+  <%= button_to "Delete this friend", @myfriend, method: :delete, class:"btn btn-outline-danger" %>
+</div>
