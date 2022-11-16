@@ -56,5 +56,5 @@ jobs:
 
       - name: Tests and Static Code Analysis
         run: |
+          bundle exec rubocop
           bundle exec rake test
-

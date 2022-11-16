@@ -5,6 +5,9 @@ AllCops:
 Layout/DotPosition:
   Enabled: false
 
+Metrics/AbcSize:
+  Enabled: false
+  
 Style/RedundantSelf:
   Enabled: false
 

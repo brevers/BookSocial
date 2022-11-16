@@ -7,7 +7,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # This is to create the association between Users and Friends, Each user has many Friends.1 to many relationship
-  has_many :friends, dependent: :destroy
+  has_many :friends, class_name: "Myfriend", dependent: :destroy
+
   # This is to create the association between Users and profile, Each user has one profile. 1 to 1.
   has_one :profile, dependent: :destroy
 

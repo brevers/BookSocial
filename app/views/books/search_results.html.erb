@@ -15,6 +15,20 @@
           </div>
         <% end %>
     </div>
+    <hr>
+    <div>
+      <strong>
+        Not the "<%= @title %>"  you were looking for?
+      </strong>
+      <hr>
+      <div>
+        Try searching this title using our <%=
+          link_to "Google Books Integration",
+          google_search_path(@title),
+          class: "btn primary btn-primary"
+        %>
+      </div>
+    </div>
   <% else %>
     <div>
       <strong>
