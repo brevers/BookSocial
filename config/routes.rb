@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # This is to contact with controller called `posts_controller.rb´ and
   # in folder view/posts with `index.html.erb´
-  root 'pages#index' 
+  root 'pages#index'
 
   # This is to connect with the controller called pages_controller.rb and
   # with views/pages main.html.erb and friends.html.erb

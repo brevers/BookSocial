@@ -13,10 +13,10 @@ class Profile < ApplicationRecord
   end
 
   def wishlist_book_ids
-    profile_wishlisted_books.collect {|wishlist| wishlist.book.id}
-  end
-  def read_book_ids
-    profile_read_books.collect {|read| read.book.id}
+    profile_wishlisted_books.collect { |wishlist| wishlist.book.id }
   end
 
+  def read_book_ids
+    profile_read_books.collect { |read| read.book.id }
+  end
 end

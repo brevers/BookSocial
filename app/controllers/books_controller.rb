@@ -22,13 +22,13 @@ class BooksController < ApplicationController
     end
   end
 
-  #Search bar by book title
+  # Search bar by book title
   def search
     @results = Book.search_by_title(@title)
     render action: :search_results
   end
 
-  #Render search result in views
+  # Render search result in views
   def search_results
   end
 
@@ -45,7 +45,7 @@ class BooksController < ApplicationController
     redirect_to main_path
   end
 
-  #If book is not in the wishlist yet, add it (login needed)
+  # If book is not in the wishlist yet, add it (login needed)
   def add_to_wishlist
     unless already_wishlist? @book
       ProfileWishlistedBook.create!(
@@ -66,7 +66,7 @@ class BooksController < ApplicationController
     redirect_to main_path
   end
 
-  #Remove books from sections
+  # Remove books from sections
   def remove_from_favorites
     current_user.profile.profile_favorite_books.find(params[:favorite_id]).destroy
     redirect_to main_path
@@ -82,8 +82,7 @@ class BooksController < ApplicationController
     redirect_to main_path
   end
 
-
-  #generate meth
+  # generate meth
   private
 
   def book_params
@@ -94,11 +93,11 @@ class BooksController < ApplicationController
     current_user.profile.favorite_book_ids.include? book.id
   end
 
-  def already_wishlist? book
+  def already_wishlist?(book)
     current_user.profile.wishlist_book_ids.include? book.id
   end
 
-  def already_reads? book
+  def already_reads?(book)
     current_user.profile.read_book_ids.include? book.id
   end
 
